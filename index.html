@@ -3,16 +3,32 @@
 
 <body>
     <h1>What Should I Eat?</h1>
-    <p id="foodResult"></p>
+    <p id="foodResultPlaceholder"></p>
+    <a id="openMapsLink" href="null" target="_blank rel="noopener noreferrer"">
+        <input type="button" id="openMapsButton" value="null">
+    </a>
 
     <script>
         const foodList = ["American", "Barbecue", "Chinese", "French", "Indian", "Italian", "Japanese", "Korean", "Mexican", "Pizza", "Seafood", "Sushi", "Thai"];
-        const foodResult = document.getElementById('foodResult');
+        const foodResultPlaceholder = document.getElementById('foodResultPlaceholder');
+        const openMapsButton = document.getElementById('openMapsButton');
+        const openMapsLink = document.getElementById('openMapsLink');
         var spin;
+        var result;
 
+        // Chooses a random cuisine from the list
         function chooseRandomFood() {
             spin = Math.floor(Math.random() * foodList.length);
-            foodResult.innerHTML = foodList[spin];
+            result = foodList[spin];
+            foodResultPlaceholder.innerHTML = result;
+            applyMapsLink(result);
+        }
+
+        // Build the maps link
+        function applyMapsLink(result) {
+            openMapsButton.setAttribute('value', "Show " + result + " places near me");
+            mapsLink = ("https://www.google.com/maps/search/" + result + "food+near+me/");
+            openMapsLink.setAttribute('href', mapsLink);
         }
 
         chooseRandomFood();

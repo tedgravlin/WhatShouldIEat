@@ -4,6 +4,7 @@ const openMapsButton = document.getElementById('openMapsButton');
 const openMapsLink = document.getElementById('openMapsLink');
 const foodIcon = document.getElementById('foodIcon');
 const foodSpinner = document.getElementById('foodSpinner');
+const spinButton = document.getElementById('spinButton');
 var spin;
 var result;
 var lastResult = result;
@@ -39,7 +40,10 @@ function applyResults(result) {
 }
 
 function animateSpinWheel() {
+    // Reset the wheel
     resetWheel();
+    // Disable the spin button
+    spinButton.setAttribute("disabled", true);
     var animationDuration = 200;
     var count = 0;
     var timesToSpin = Math.floor((Math.random() * 20) + 10);
@@ -64,10 +68,6 @@ function animateSpinWheel() {
             spinEnd(finalSpin)
         }
     }, animationDuration)
-
-    if (count >= timesToSpin) {
-        alert("FINAL SPIN");
-    }
 }
 
 function spinEnd(spin) {
@@ -80,6 +80,8 @@ function spinEnd(spin) {
         icon.id = "foodIcon";
         foodSpinner.appendChild(icon);
         applyResults(result);
+        // Enable the spin button
+        spinButton.removeAttribute("disabled");
     }, 200)
 
 }

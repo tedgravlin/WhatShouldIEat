@@ -3,17 +3,50 @@
     text-align: center;
 }
 
+/* Category: Text */
 h1.title {
     text-align: inherit;
+    width: 100vw;
+    margin-bottom: 2em;
 }
 
+p.foodResultText {
+    width: 100vw;
+    visibility: hidden;
+}
+
+/* Category: Div */
 div.buttons {
     text-align: inherit;
+    width: 100vw;
 }
 
+div.foodSpinner {
+    text-align: inherit;
+    width: 100vw;
+    height: min-content;
+    min-height: 131.517px;
+}
+
+/* Category: Buttons */
 input[type=button] {
     padding: 8px 15px 8px 15px;
     margin: 0.5em;
     border-radius: 16px;
     border: 0px hidden;
+}
+
+/* Category: Images */
+img.dieIcon {
+    width: 10vw;
+}
+img.foodIcon {
+    width: 10vw;
+    animation: moveUp 0.2s linear normal forwards;
+    position: relative;
+}
+@keyframes moveUp {
+    0% {top: 40px; opacity: 0%;}
+    50% {top: 0px; opacity: 100%;}
+    100% {top: -40px; opacity: 0%;}
 }

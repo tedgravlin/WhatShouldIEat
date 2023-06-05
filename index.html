@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>What Should I Eat?</h1>
+    <p id="foodResult"></p>
+
+    <script>
+        const foodList = ["American", "Barbecue", "Chinese", "French", "Indian", "Italian", "Japanese", "Korean", "Mexican", "Pizza", "Seafood", "Sushi", "Thai"];
+        const foodResult = document.getElementById('foodResult');
+        var spin;
+
+        function chooseRandomFood() {
+            spin = Math.floor(Math.random() * foodList.length);
+            foodResult.innerHTML = foodList[spin];
+        }
+
+        chooseRandomFood();
+    </script>
+</body>
+
+</html>

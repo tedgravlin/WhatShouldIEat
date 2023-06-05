@@ -39,6 +39,7 @@ function applyResults(result) {
 }
 
 function animateSpinWheel() {
+    resetWheel();
     var animationDuration = 200;
     var count = 0;
     var timesToSpin = Math.floor((Math.random() * 20) + 10);
@@ -81,4 +82,16 @@ function spinEnd(spin) {
         applyResults(result);
     }, 200)
 
+}
+
+function resetWheel() {
+    // Delete icons
+    document.getElementById("foodIcon").remove();
+    // Set the result text and make it hidden
+    foodResultText.innerHTML = "Spin the wheel!";
+    foodResultText.style.visibility = "hidden";
+    // Make the open maps link hidden
+    openMapsLink.style.display = "none";
+    // Make the open maps button hidden
+    openMapsButton.style.visibility = "hidden";
 }

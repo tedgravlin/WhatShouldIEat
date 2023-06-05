@@ -21,7 +21,7 @@ function chooseRandomFood() {
             result = foodList[spin];
         }
     }
-    return result;
+    return result.toLowerCase();
 }
 
 // Build and apply the maps link
@@ -72,7 +72,7 @@ function animateSpinWheel() {
 
 function spinEnd(spin) {
     setTimeout(function () {
-        result = foodList[spin];
+        result = foodList[spin].toLowerCase();
         const icon = document.createElement("img");
         icon.className = "foodIcon";
         icon.style.animationFillMode = "none";

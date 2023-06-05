@@ -1,0 +1,19 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1.title {
+    text-align: inherit;
+}
+
+div.buttons {
+    text-align: inherit;
+}
+
+input[type=button] {
+    padding: 8px 15px 8px 15px;
+    margin: 0.5em;
+    border-radius: 16px;
+    border: 0px hidden;
+}

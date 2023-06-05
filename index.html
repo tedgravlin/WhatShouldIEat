@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="css/mainStyle.css">
+    <!-- Scale page to display width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <body>
-    <h1>What Should I Eat?</h1>
-    <p id="foodResultPlaceholder"></p>
-    <input type="button" id="spinButton" value="Spin" onclick="spinWheel()">
-    <a id="openMapsLink" href="null" target="_blank rel="noopener noreferrer"">
-        <input type="button" id="openMapsButton" value="null">
-    </a>
+    <!-- Title-->
+    <h1 class="title">What Should I Eat?</h1>
+    <!-- Food Icon -->
+    <img id="foodIcon" src="./assets/images/die.svg" style="width: 10vw;">
+    <!-- Spinner Result -->
+    <p id="foodResultPlaceholder" style="visibility: hidden;">Spin the wheel!</p>
+    <!-- Buttons-->
+    <div class="buttons">
+        <input type="button" id="spinButton" value="Spin" onclick="spinWheel()">
+        <br>
+        <a id="openMapsLink" href="null" target="_blank rel="noopener noreferrer">
+            <input type="button" id="openMapsButton" value="null" style="visibility: hidden;">
+        </a>
+    </div>
 
     <script>
         const foodList = ["American", "Barbecue", "Chinese", "French", "Indian", "Italian", "Japanese", "Korean", "Mexican", "Pizza", "Seafood", "Sushi", "Thai"];
         const foodResultPlaceholder = document.getElementById('foodResultPlaceholder');
         const openMapsButton = document.getElementById('openMapsButton');
         const openMapsLink = document.getElementById('openMapsLink');
+        const foodIcon = document.getElementById('foodIcon');
         var spin;
         var result;
         var lastResult = result;
@@ -23,11 +39,14 @@
             spin = Math.floor(Math.random() * foodList.length);
             result = foodList[spin];
 
-            // If the result is the same as last time, spin again
+            // If the result is the same as last time, keep spinning until it's different
             if (lastResult == result) {
-                result = foodList[spin];
+                while (lastResult == result)
+                {
+                    result = foodList[spin];
+                }
             }
-            
+
             foodResultPlaceholder.innerHTML = result;
             return result;
         }
@@ -39,12 +58,20 @@
             openMapsLink.setAttribute('href', mapsLink);
         }
 
+        function setIcon(result) {
+            foodIcon.setAttribute('src', "./assets/images/" + result + ".svg")
+        }
+
         function spinWheel() {
             result = chooseRandomFood();
             applyMapsLink(result);
+            setIcon(result);
+            // Make the result text visible
+            foodResultPlaceholder.style.visibility = "visible";
+            // Make the open maps button visible
+            openMapsButton.style.visibility = "visible";            
         }
 
-        spinWheel();
     </script>
 </body>
 

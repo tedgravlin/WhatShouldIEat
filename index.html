@@ -4,6 +4,7 @@
 <body>
     <h1>What Should I Eat?</h1>
     <p id="foodResultPlaceholder"></p>
+    <input type="button" id="spinButton" value="Spin" onclick="spinWheel()">
     <a id="openMapsLink" href="null" target="_blank rel="noopener noreferrer"">
         <input type="button" id="openMapsButton" value="null">
     </a>
@@ -15,23 +16,35 @@
         const openMapsLink = document.getElementById('openMapsLink');
         var spin;
         var result;
+        var lastResult = result;
 
         // Chooses a random cuisine from the list
         function chooseRandomFood() {
             spin = Math.floor(Math.random() * foodList.length);
             result = foodList[spin];
+
+            // If the result is the same as last time, spin again
+            if (lastResult == result) {
+                result = foodList[spin];
+            }
+            
             foodResultPlaceholder.innerHTML = result;
-            applyMapsLink(result);
+            return result;
         }
 
-        // Build the maps link
+        // Build and apply the maps link
         function applyMapsLink(result) {
             openMapsButton.setAttribute('value', "Show " + result + " places near me");
-            mapsLink = ("https://www.google.com/maps/search/" + result + "food+near+me/");
+            mapsLink = ("https://www.google.com/maps/search/" + result + "+food+near+me/");
             openMapsLink.setAttribute('href', mapsLink);
         }
 
-        chooseRandomFood();
+        function spinWheel() {
+            result = chooseRandomFood();
+            applyMapsLink(result);
+        }
+
+        spinWheel();
     </script>
 </body>
 

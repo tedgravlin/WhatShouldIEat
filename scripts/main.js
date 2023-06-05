@@ -72,11 +72,11 @@ function animateSpinWheel() {
 
 function spinEnd(spin) {
     setTimeout(function () {
-        result = foodList[spin].toLowerCase();
+        result = foodList[spin];
         const icon = document.createElement("img");
         icon.className = "foodIcon";
         icon.style.animationFillMode = "none";
-        icon.setAttribute("src", "./assets/images/" + result + ".svg");
+        icon.setAttribute("src", "./assets/images/" + result.toLowerCase() + ".svg");
         icon.id = "foodIcon";
         foodSpinner.appendChild(icon);
         applyResults(result);

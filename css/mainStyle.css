@@ -7,6 +7,7 @@
 h1.title {
     text-align: inherit;
     width: 100vw;
+    margin-top: 2em;
     margin-bottom: 2em;
 }
 
@@ -25,7 +26,7 @@ div.foodSpinner {
     text-align: inherit;
     width: 100vw;
     height: min-content;
-    min-height: 131.517px;
+    min-height: 30vh;
 }
 
 /* Category: Buttons */
@@ -38,10 +39,10 @@ input[type=button] {
 
 /* Category: Images */
 img.dieIcon {
-    width: 10vw;
+    width: 30vh;
 }
 img.foodIcon {
-    width: 10vw;
+    width: 30vh;
     animation: moveUp 0.2s linear normal forwards;
     position: relative;
 }

@@ -64,14 +64,19 @@ function animateSpinWheel() {
         icon.className = "foodIcon";
         icon.setAttribute("src", "./assets/images/" + result + ".svg");
         icon.id = "foodIcon";
-        foodIconBackground.appendChild(icon);
-        setTimeout(function () {
-            foodIconBackground.removeChild(icon);
-        }, 500);
-        if (count >= timesToSpin) {
+        
+        if (count == timesToSpin) {
             finalSpin = spin;
             clearInterval(loop);
-            spinEnd(finalSpin)
+            icon.style.animationName = "moveHalfUp";
+            foodIconBackground.appendChild(icon);
+            spinEnd(finalSpin);
+        }
+        else {
+            foodIconBackground.appendChild(icon);
+            setTimeout(function () {
+                foodIconBackground.removeChild(icon);
+            }, 500);
         }
     }, 500)
 }
@@ -79,12 +84,6 @@ function animateSpinWheel() {
 function spinEnd(spin) {
     setTimeout(function () {
         result = foodList[spin];
-        const icon = document.createElement("img");
-        icon.className = "foodIcon";
-        icon.style.animationFillMode = "none";
-        icon.setAttribute("src", "./assets/images/" + result.toLowerCase() + ".svg");
-        icon.id = "foodIcon";
-        foodIconBackground.appendChild(icon);
         applyResults(result);
         // Enable the spin button
         spinButton.removeAttribute("disabled");

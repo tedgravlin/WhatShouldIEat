@@ -36,6 +36,10 @@ p.foodResultText {
     visibility: hidden;
     font-weight: bold;
     position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Category: Div */
@@ -107,7 +111,8 @@ input[type=button] {
 
 /* Category: Images */
 img.dieIcon {
-    width: 30vh;
+    width: 75%;
+    height: 100%;
 }
 
 img.foodIcon {
@@ -134,6 +139,17 @@ img.foodIcon {
     }
 }
 
+@keyframes moveHalfUp {
+    0% {
+        top: 250px;
+        opacity: 0%;
+    }
+    100% {
+        top: 0px;
+        opacity: 100%;
+    }
+}
+
 
 @media (prefers-color-scheme: light) {
     body {
@@ -149,6 +165,9 @@ img.foodIcon {
         background-color: #E8F5E9;
     }
     div.foodIconBackground {
+        border: 0px black solid;
+    }
+    div.foodIconBackgroundBorder {
         border: 10px black solid;
     }
     input[type=button].spin {

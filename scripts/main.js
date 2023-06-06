@@ -6,6 +6,7 @@ const foodIcon = document.getElementById('foodIcon');
 const foodSpinner = document.getElementById('foodSpinner');
 const foodIconBackground = document.getElementById('foodIconBackground');
 const spinButton = document.getElementById('spinButton');
+const buttonsDiv = document.getElementById('buttonsDiv');
 var spin;
 var result;
 var lastResult = result;
@@ -39,6 +40,9 @@ function applyResults(result) {
     openMapsLink.style.display = "inline";
     // Make the open maps button visible
     openMapsButton.style.visibility = "visible";
+    
+    buttonsDiv.style.animationName = "slideUp";
+    buttonsDiv.style.display = "inline";
 }
 
 function animateSpinWheel() {
@@ -87,6 +91,7 @@ function spinEnd(spin) {
 }
 
 function resetWheel() {
+    buttonsDiv.style.animationName = "slideDown";
     // Delete icons
     document.getElementById("foodIcon").remove();
     // Set the result text and make it hidden
@@ -94,7 +99,6 @@ function resetWheel() {
     foodResultText.style.visibility = "hidden";
     // Disable the maps link
     openMapsLink.setAttribute("disabled", true);
-    openMapsLink.att
     // Make the open maps button hidden
     openMapsButton.style.visibility = "hidden";
 }

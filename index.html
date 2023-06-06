@@ -15,9 +15,9 @@
             <h1 class="title">What Should I Eat?</h1>
         </div>
         <!-- Food Icon -->
-        <div id="foodSpinner" class="foodSpinner">
-            <div class="foodIconBackgroundBorder">
-                <div id="foodIconBackground" class="foodIconBackground">
+        <div id="spinnerContainer" class="spinnerContainer">
+            <div class="spinnerBorder">
+                <div id="spinnerBackground" class="spinnerBackground">
                     <img class="dieIcon" id="foodIcon" src="./assets/images/die.svg">
                     <p id="foodResultText" class="foodResultText">Spin the wheel!</p>
                 </div>
@@ -25,14 +25,15 @@
             <input type="button" class="spin" id="spinButton" value="Spin" onclick="animateSpinWheel()">
             <br>
         </div>
-        <!-- Buttons-->
-        <div id="buttonsDiv" class="buttons" style="display: none;">
+        <!-- Bottom Sheet -->
+        <div id="bottomSheet" class="buttons" style="display: none;">
             <a id="openMapsLink" href="null" target="_blank" rel="noopener noreferrer" disabled>
                 <input type="button" class="openMaps" id="openMapsButton" value="null" style="visibility: hidden;">
             </a>
         </div>
     </div>
 
+    <!-- Import JavaScipt -->
     <script type="text/javascript" src="./scripts/main.js"></script>
 </body>
 

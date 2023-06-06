@@ -3,10 +3,10 @@ const foodResultText = document.getElementById('foodResultText');
 const openMapsButton = document.getElementById('openMapsButton');
 const openMapsLink = document.getElementById('openMapsLink');
 const foodIcon = document.getElementById('foodIcon');
-const foodSpinner = document.getElementById('foodSpinner');
-const foodIconBackground = document.getElementById('foodIconBackground');
+const spinnerContainer = document.getElementById('spinnerContainer');
+const spinnerBackground = document.getElementById('spinnerBackground');
 const spinButton = document.getElementById('spinButton');
-const buttonsDiv = document.getElementById('buttonsDiv');
+const bottomSheet = document.getElementById('bottomSheet');
 var spin;
 var result;
 var lastResult = result;
@@ -43,8 +43,8 @@ function applyResults(result) {
     // Make the open maps button visible
     openMapsButton.style.visibility = "visible";
     // Make the bottom sheet come up
-    buttonsDiv.style.animationName = "slideUp";
-    buttonsDiv.style.display = "inline";
+    bottomSheet.style.animationName = "slideUp";
+    bottomSheet.style.display = "inline";
 }
 
 function animateSpinWheel() {
@@ -52,11 +52,11 @@ function animateSpinWheel() {
     resetWheel();
     // Disable the spin button
     spinButton.setAttribute("disabled", true);
-    var count = 0;
-    var timesToSpin = 10;
+    var spinnerRevolutions = 0;
+    var maxSpinnerRevolutions = 10;
 
     var loop = setInterval(function () {
-        count++;
+        spinnerRevolutions++;
         spin = Math.floor(Math.random() * foodList.length);
         result = chooseRandomFood();
         foodIcon.style.display = "none";
@@ -65,17 +65,17 @@ function animateSpinWheel() {
         icon.setAttribute("src", "./assets/images/" + result + ".svg");
         icon.id = "foodIcon";
         
-        if (count == timesToSpin) {
+        if (spinnerRevolutions == maxSpinnerRevolutions) {
             finalSpin = spin;
             clearInterval(loop);
             icon.style.animationName = "moveHalfUp";
-            foodIconBackground.appendChild(icon);
+            spinnerBackground.appendChild(icon);
             spinEnd(finalSpin);
         }
         else {
-            foodIconBackground.appendChild(icon);
+            spinnerBackground.appendChild(icon);
             setTimeout(function () {
-                foodIconBackground.removeChild(icon);
+                spinnerBackground.removeChild(icon);
             }, 500);
         }
     }, 500)
@@ -102,5 +102,5 @@ function resetWheel() {
     // Make the open maps button hidden
     openMapsButton.style.visibility = "hidden";
     // Make the bottom sheet slide down
-    buttonsDiv.style.animationName = "slideDown";
+    bottomSheet.style.animationName = "slideDown";
 }

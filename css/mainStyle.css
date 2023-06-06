@@ -51,7 +51,7 @@ div.header {
     flex-grow: 0;
 }
 
-div.spinnerBackground {
+div.spinnerContainer {
     text-align: inherit;
     height: min-content;
     width: 90vw;
@@ -85,7 +85,7 @@ div.buttons {
     100% { top: 200px; }
 }
 
-div.foodIconBackground {
+div.spinnerBackground {
     width: 30vh;
     height: 35vh;
     margin: auto;
@@ -95,7 +95,7 @@ div.foodIconBackground {
     box-shadow:  inset 0px -190px 26px -190px rgba(92,92,92,1),  inset 0px 190px 26px -190px rgba(92,92,92,1);
 }
 
-div.foodIconBackgroundBorder {
+div.spinnerBorder {
     border-radius: 16px;
     width: min-content;
     margin-left: auto;
@@ -162,13 +162,13 @@ img.foodIcon {
     div.buttons {
         background-color: #f5e8e8;
     }
-    div.spinnerBackground {
+    div.spinnerContainer {
         background-color: #f5e8e8;
     }
-    div.foodIconBackground {
+    div.spinnerBackground {
         border: 0px black solid;
     }
-    div.foodIconBackgroundBorder {
+    div.spinnerBorder {
         border: 10px black solid;
     }
     input[type=button].spin {
@@ -196,13 +196,13 @@ img.foodIcon {
     div.buttons {
         background-color: #222;
     }
-    div.spinnerBackground {
+    div.spinnerContainer {
         background-color: #222;
     }
-    div.foodIconBackground {
+    div.spinnerBackground {
         border: 0px black solid;
     }
-    div.foodIconBackgroundBorder {
+    div.spinnerBorder {
         border: 10px black solid;
     }
     input[type=button].spin {

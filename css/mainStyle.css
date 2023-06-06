@@ -5,12 +5,21 @@
     scroll-behavior: smooth;
 }
 
+@font-face {
+    src: url("../assets/fonts/BettinaSignature.ttf");
+    font-family: "BettinaSignature";
+    font-weight: normal;
+    font-display: swap;
+  }
+
 body {
     margin: 0px 0px 0px 0px;
     box-sizing: border-box;
 }
 /* Category: Text */
 h1.title {
+    font-family: "BettinaSignature";
+    font-size: 20px;
     text-align: inherit;
     margin: 0;
 }
@@ -22,7 +31,7 @@ p.foodResultText {
 
 /* Category: Div */
 div.header {
-    padding: 2em 0em 4em 0em;
+    padding: 2em 0em 2em 0em;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
 }
@@ -110,4 +119,28 @@ img.foodIcon {
     }
 }
 
-@media (prefers-color-scheme: dark) {}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0f0f0f;
+    }
+    h1.title {
+        color: white;
+    }
+    div.header {
+        background-color: #222;
+    }
+    div.buttons {
+        background-color: #222;
+    }
+    div.foodSpinner {
+        background-color: #222;
+    }
+    div.foodIconBackground {
+        border: 10px black solid;
+    }
+    input[type=button].spin {
+        background-color: red;
+        color: white;
+        font-weight: bold;
+    }
+}

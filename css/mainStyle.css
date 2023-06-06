@@ -40,6 +40,7 @@ p.foodResultText {
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 1em;
 }
 
 /* Category: Div */
@@ -50,7 +51,7 @@ div.header {
     flex-grow: 0;
 }
 
-div.foodSpinner {
+div.spinnerBackground {
     text-align: inherit;
     height: min-content;
     width: 90vw;
@@ -91,7 +92,7 @@ div.foodIconBackground {
     border-radius: 6px;
     background-color: white;
     overflow: hidden;
-    box-shadow:  inset 0px -190px 26px -181px rgba(92,92,92,1),  inset 0px 190px 26px -181px rgba(92,92,92,1);
+    box-shadow:  inset 0px -190px 26px -190px rgba(92,92,92,1),  inset 0px 190px 26px -190px rgba(92,92,92,1);
 }
 
 div.foodIconBackgroundBorder {
@@ -156,13 +157,13 @@ img.foodIcon {
         background-color: #FFFFFF;
     }
     div.header {
-        background-color: #E8F5E9;
+        background-color: #f5e8e8;
     }
     div.buttons {
-        background-color: #E8F5E9;
+        background-color: #f5e8e8;
     }
-    div.foodSpinner {
-        background-color: #E8F5E9;
+    div.spinnerBackground {
+        background-color: #f5e8e8;
     }
     div.foodIconBackground {
         border: 0px black solid;
@@ -187,7 +188,7 @@ img.foodIcon {
         background-color: #0f0f0f;
     }
     h1.title {
-        color: white;
+        color: red;
     }
     div.header {
         background-color: #222;
@@ -195,7 +196,7 @@ img.foodIcon {
     div.buttons {
         background-color: #222;
     }
-    div.foodSpinner {
+    div.spinnerBackground {
         background-color: #222;
     }
     div.foodIconBackground {

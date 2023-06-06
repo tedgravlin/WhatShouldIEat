@@ -4,6 +4,7 @@ const openMapsButton = document.getElementById('openMapsButton');
 const openMapsLink = document.getElementById('openMapsLink');
 const foodIcon = document.getElementById('foodIcon');
 const foodSpinner = document.getElementById('foodSpinner');
+const foodIconBackground = document.getElementById('foodIconBackground');
 const spinButton = document.getElementById('spinButton');
 var spin;
 var result;
@@ -44,9 +45,8 @@ function animateSpinWheel() {
     resetWheel();
     // Disable the spin button
     spinButton.setAttribute("disabled", true);
-    var animationDuration = 200;
     var count = 0;
-    var timesToSpin = Math.floor((Math.random() * 20) + 10);
+    var timesToSpin = 10;
 
     var loop = setInterval(function () {
         count++;
@@ -57,17 +57,16 @@ function animateSpinWheel() {
         icon.className = "foodIcon";
         icon.setAttribute("src", "./assets/images/" + result + ".svg");
         icon.id = "foodIcon";
-        foodSpinner.appendChild(icon);
-        var animationDuration = 200;
+        foodIconBackground.appendChild(icon);
         setTimeout(function () {
-            foodSpinner.removeChild(icon);
-        }, animationDuration);
+            foodIconBackground.removeChild(icon);
+        }, 500);
         if (count >= timesToSpin) {
             finalSpin = spin;
             clearInterval(loop);
             spinEnd(finalSpin)
         }
-    }, animationDuration)
+    }, 500)
 }
 
 function spinEnd(spin) {
@@ -78,11 +77,11 @@ function spinEnd(spin) {
         icon.style.animationFillMode = "none";
         icon.setAttribute("src", "./assets/images/" + result.toLowerCase() + ".svg");
         icon.id = "foodIcon";
-        foodSpinner.appendChild(icon);
+        foodIconBackground.appendChild(icon);
         applyResults(result);
         // Enable the spin button
         spinButton.removeAttribute("disabled");
-    }, 200)
+    }, 500)
 
 }
 

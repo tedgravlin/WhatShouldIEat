@@ -22,7 +22,7 @@ div.body {
     height: 100vh;
     align-items: stretch;
     flex-direction: column;
-    overflow: hidden;
+    overflow: scroll;
 }
 /* Category: Text */
 h1.title {
@@ -115,7 +115,7 @@ img.foodIcon {
         background-color: #E8F5E9;
     }
     div.buttons {
-        background-color: #FFFFFF;
+        background-color: #E8F5E9;
     }
     div.foodSpinner {
         background-color: #E8F5E9;

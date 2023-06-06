@@ -86,6 +86,8 @@ div.foodIconBackground {
     border-radius: 16px;
     background-color: white;
     overflow: hidden;
+    box-shadow:  inset 0px -190px 26px -181px rgba(92,92,92,1),  inset 0px 190px 26px -181px rgba(92,92,92,1);
+    ;
 }
 
 /* Category: Buttons */
@@ -102,7 +104,8 @@ img.dieIcon {
 }
 
 img.foodIcon {
-    width: auto;
+    width: 75%;
+    height: 100%;
     animation: moveUp 0.5s linear normal forwards;
     position: relative;
 }
@@ -110,14 +113,17 @@ img.foodIcon {
 @keyframes moveUp {
     0% {
         top: 250px;
+        opacity: 0%;
     }
-
     50% {
         top: 0px;
+        opacity: 100%;
     }
 
     100% {
         top: -250px;
+        opacity: 0%;
+
     }
 }
 

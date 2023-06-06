@@ -30,6 +30,7 @@ function applyResults(result) {
     openMapsButton.setAttribute('value', "Show " + result + " places near me");
     mapsLink = ("https://www.google.com/maps/search/" + result + "+food+near+me/");
     openMapsLink.setAttribute('href', mapsLink);
+    openMapsLink.removeAttribute("disabled");
 
     // Set the result text and make it visible
     foodResultText.innerHTML = result;
@@ -91,8 +92,9 @@ function resetWheel() {
     // Set the result text and make it hidden
     foodResultText.innerHTML = "Spin the wheel!";
     foodResultText.style.visibility = "hidden";
-    // Make the open maps link hidden
-    openMapsLink.style.display = "none";
+    // Disable the maps link
+    openMapsLink.setAttribute("disabled", true);
+    openMapsLink.att
     // Make the open maps button hidden
     openMapsButton.style.visibility = "hidden";
 }

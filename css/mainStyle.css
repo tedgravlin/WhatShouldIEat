@@ -35,6 +35,7 @@ h1.title {
 p.foodResultText {
     visibility: hidden;
     font-weight: bold;
+    position: absolute;
 }
 
 /* Category: Div */
@@ -83,11 +84,17 @@ div.foodIconBackground {
     width: 30vh;
     height: 35vh;
     margin: auto;
-    border-radius: 16px;
+    border-radius: 6px;
     background-color: white;
     overflow: hidden;
     box-shadow:  inset 0px -190px 26px -181px rgba(92,92,92,1),  inset 0px 190px 26px -181px rgba(92,92,92,1);
-    ;
+}
+
+div.foodIconBackgroundBorder {
+    border-radius: 16px;
+    width: min-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Category: Buttons */
@@ -173,6 +180,9 @@ img.foodIcon {
         background-color: #222;
     }
     div.foodIconBackground {
+        border: 0px black solid;
+    }
+    div.foodIconBackgroundBorder {
         border: 10px black solid;
     }
     input[type=button].spin {

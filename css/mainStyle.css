@@ -16,6 +16,14 @@ body {
     margin: 0px 0px 0px 0px;
     box-sizing: border-box;
 }
+
+div.body {
+    display: flex;
+    height: 100vh;
+    align-items: stretch;
+    flex-direction: column;
+    overflow: hidden;
+}
 /* Category: Text */
 h1.title {
     font-family: "BettinaSignature";
@@ -34,23 +42,26 @@ div.header {
     padding: 2em 0em 2em 0em;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
-}
-div.buttons {
-    text-align: inherit;
-    margin: 1em 0px 1em 0px;
-    width: auto;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    flex-grow: 0;
 }
 
 div.foodSpinner {
     text-align: inherit;
     height: min-content;
-    min-height: 30vh;
     width: 90vw;
-    margin: 4em auto 1em auto;
-    padding: 1em 0em 1em 0em;
+    margin: 4em auto 4em auto;
+    padding: 2em 0em 2em 0em;
     border-radius: 16px;
+    flex-grow: 0;
+}
+
+div.buttons {
+    text-align: inherit;
+    padding: 1em 0em 1em 0em;
+    width: auto;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    flex-grow: 1;
 }
 
 div.foodIconBackground {
@@ -117,6 +128,11 @@ img.foodIcon {
         color: white;
         font-weight: bold;
     }
+    input[type=button].openMaps {
+        background-color: green;
+        color: white;
+        font-weight: bold;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -140,6 +156,11 @@ img.foodIcon {
     }
     input[type=button].spin {
         background-color: red;
+        color: white;
+        font-weight: bold;
+    }
+    input[type=button].openMaps {
+        background-color: green;
         color: white;
         font-weight: bold;
     }

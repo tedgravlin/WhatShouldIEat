@@ -28,19 +28,21 @@ function chooseRandomFood() {
 
 // Build and apply the maps link
 function applyResults(result) {
-    openMapsButton.setAttribute('value', "Show " + result + " places near me");
-    mapsLink = ("https://www.google.com/maps/search/" + result + "+food+near+me/");
-    openMapsLink.setAttribute('href', mapsLink);
-    openMapsLink.removeAttribute("disabled");
-
     // Set the result text and make it visible
     foodResultText.innerHTML = result;
     foodResultText.style.visibility = "visible";
+    // Build maps link
+    mapsLink = ("https://www.google.com/maps/search/" + result + "+food+near+me/");
+    // Pass maps link to maps button and enable link
+    openMapsLink.setAttribute('href', mapsLink);
+    openMapsLink.removeAttribute("disabled");
+    // Pass text to open maps button
+    openMapsButton.setAttribute('value', "Show " + result + " places near me");
     // Make the open maps link visible
     openMapsLink.style.display = "inline";
     // Make the open maps button visible
     openMapsButton.style.visibility = "visible";
-    
+    // Make the bottom sheet come up
     buttonsDiv.style.animationName = "slideUp";
     buttonsDiv.style.display = "inline";
 }
@@ -91,7 +93,6 @@ function spinEnd(spin) {
 }
 
 function resetWheel() {
-    buttonsDiv.style.animationName = "slideDown";
     // Delete icons
     document.getElementById("foodIcon").remove();
     // Set the result text and make it hidden
@@ -101,4 +102,6 @@ function resetWheel() {
     openMapsLink.setAttribute("disabled", true);
     // Make the open maps button hidden
     openMapsButton.style.visibility = "hidden";
+    // Make the bottom sheet slide down
+    buttonsDiv.style.animationName = "slideDown";
 }

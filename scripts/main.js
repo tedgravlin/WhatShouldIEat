@@ -66,7 +66,7 @@ function animateSpinWheel() {
         foodIcon.style.display = "none";
         const icon = document.createElement("img");
         icon.className = "foodIcon";
-        icon.setAttribute("src", "./assets/images/" + result + ".png");
+        icon.setAttribute("src", "./assets/images/" + result + ".webp");
         icon.id = "foodIcon";
 
         if (spinnerRevolutions == maxSpinnerRevolutions) {

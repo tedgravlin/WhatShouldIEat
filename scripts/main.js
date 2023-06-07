@@ -1,4 +1,4 @@
-const foodList = ["American", "Barbecue", "Chinese", "French", "Indian", "Italian", "Japanese", "Korean", "Mexican", "Pizza", "Seafood", "Sushi", "Thai"];
+const foodList = ["American", "Chinese", "French", "Indian", "Italian", "Japanese", "Korean", "Mexican", "Pizza", "Seafood", "Sushi", "Thai"];
 const foodResultText = document.getElementById('foodResultText');
 const openMapsButton = document.getElementById('openMapsButton');
 const openMapsLink = document.getElementById('openMapsLink');
@@ -62,7 +62,7 @@ function animateSpinWheel() {
         foodIcon.style.display = "none";
         const icon = document.createElement("img");
         icon.className = "foodIcon";
-        icon.setAttribute("src", "./assets/images/" + result + ".svg");
+        icon.setAttribute("src", "./assets/images/" + result + ".png");
         icon.id = "foodIcon";
         
         if (spinnerRevolutions == maxSpinnerRevolutions) {

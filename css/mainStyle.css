@@ -112,13 +112,15 @@ input[type=button] {
 
 /* Category: Images */
 img.dieIcon {
-    width: 75%;
+    width: 50%;
     height: 100%;
+    object-fit: contain;
 }
 
 img.foodIcon {
-    width: 75%;
+    width: 50%;
     height: 100%;
+    object-fit: contain;
     animation: moveUp 0.5s linear normal forwards;
     position: relative;
 }

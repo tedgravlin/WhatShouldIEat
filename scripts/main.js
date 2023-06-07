@@ -18,15 +18,15 @@ function chooseRandomFood() {
     spin = Math.floor(Math.random() * foodList.length);
     result = foodList[spin];
 
-    var lowerCaseResult = result.toLowerCase();
-    var lowerCaseLastResult = lastResult.toLowerCase();
-
-    // If the result is the same as last time, keep spinning until it's different
-    while (lowerCaseLastResult === lowerCaseResult) {
-        lowerCaseResult = foodList[Math.floor(Math.random() * foodList.length)];
+    // If lastResult isn't null
+    if (lastResult != null) {
+        // If the result is the same as last time, keep spinning until it's different
+        while (lastResult.toLowerCase() === result.toLowerCase()) {
+            result = foodList[Math.floor(Math.random() * foodList.length)].toLowerCase();
+        }
     }
 
-    return lowerCaseResult;
+    return result.toLowerCase();
 }
 
 // Build and apply the maps link
@@ -68,7 +68,7 @@ function animateSpinWheel() {
         icon.className = "foodIcon";
         icon.setAttribute("src", "./assets/images/" + result + ".png");
         icon.id = "foodIcon";
-        
+
         if (spinnerRevolutions == maxSpinnerRevolutions) {
             finalSpin = spin;
             clearInterval(loop);

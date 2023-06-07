@@ -55,16 +55,27 @@ div.spinnerContainer {
     text-align: inherit;
     height: min-content;
     width: 90vw;
-    margin: 2em auto 2em auto;
+    margin: 2em auto 0em auto;
+    padding: 0em 0em 0em 0em;
+    border-radius: 16px;
+    flex-grow: 1;
+}
+
+div.spinnerBackground {
+    text-align: inherit;
+    height: min-content;
+    width: 90vw;
+    margin: 0em auto 0em auto;
     padding: 2em 0em 2em 0em;
     border-radius: 16px;
-    flex-grow: 0;
+    flex-grow: 1;
 }
 
 div.bottomSheet {
     text-align: inherit;
     padding: 0em 0em 0em 0em;
     width: auto;
+    margin-top: 2em;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     flex-grow: 1;
@@ -85,7 +96,7 @@ div.bottomSheet {
     100% { top: 200px; }
 }
 
-div.spinnerBackground {
+div.spinner {
     width: 30vh;
     height: 35vh;
     margin: auto;
@@ -164,10 +175,10 @@ img.foodIcon {
     div.bottomSheet {
         background-color: #f5e8e8;
     }
-    div.spinnerContainer {
+    div.spinnerBackground {
         background-color: #f5e8e8;
     }
-    div.spinnerBackground {
+    div.spinner {
         border: 0px black solid;
     }
     div.spinnerBorder {
@@ -198,10 +209,10 @@ img.foodIcon {
     div.bottomSheet {
         background-color: #222;
     }
-    div.spinnerContainer {
+    div.spinnerBackground {
         background-color: #222;
     }
-    div.spinnerBackground {
+    div.spinner {
         border: 0px black solid;
     }
     div.spinnerBorder {

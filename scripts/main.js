@@ -4,7 +4,7 @@ const openMapsButton = document.getElementById('openMapsButton');
 const openMapsLink = document.getElementById('openMapsLink');
 const foodIcon = document.getElementById('foodIcon');
 const spinnerContainer = document.getElementById('spinnerContainer');
-const spinnerBackground = document.getElementById('spinnerBackground');
+const spinner = document.getElementById('spinner');
 const spinButton = document.getElementById('spinButton');
 const bottomSheet = document.getElementById('bottomSheet');
 var spin;
@@ -69,13 +69,13 @@ function animateSpinWheel() {
             finalSpin = spin;
             clearInterval(loop);
             icon.style.animationName = "moveHalfUp";
-            spinnerBackground.appendChild(icon);
+            spinner.appendChild(icon);
             spinEnd(finalSpin);
         }
         else {
-            spinnerBackground.appendChild(icon);
+            spinner.appendChild(icon);
             setTimeout(function () {
-                spinnerBackground.removeChild(icon);
+                spinner.removeChild(icon);
             }, 500);
         }
     }, 500)

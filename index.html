@@ -16,14 +16,15 @@
         </div>
         <!-- Food Icon -->
         <div id="spinnerContainer" class="spinnerContainer">
-            <div class="spinnerBorder">
-                <div id="spinnerBackground" class="spinnerBackground">
-                    <img class="dieIcon" id="foodIcon" src="./assets/images/die.png">
-                    <p id="foodResultText" class="foodResultText">Spin the wheel!</p>
+            <div class="spinnerBackground">
+                <div class="spinnerBorder">
+                    <div id="spinner" class="spinner">
+                        <img class="dieIcon" id="foodIcon" src="./assets/images/die.png">
+                        <p id="foodResultText" class="foodResultText">Spin the wheel!</p>
+                    </div>
                 </div>
+                <input type="button" class="spin" id="spinButton" value="Spin" onclick="animateSpinWheel()">
             </div>
-            <input type="button" class="spin" id="spinButton" value="Spin" onclick="animateSpinWheel()">
-            <br>
         </div>
         <!-- Bottom Sheet -->
         <div id="bottomSheet" class="bottomSheet" style="display: none;">

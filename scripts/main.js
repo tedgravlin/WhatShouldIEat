@@ -9,21 +9,24 @@ const spinButton = document.getElementById('spinButton');
 const bottomSheet = document.getElementById('bottomSheet');
 var spin;
 var result;
-var lastResult = result;
+var lastResult;
 var finalSpin = 0;
 
 // Chooses a random cuisine from the list
 function chooseRandomFood() {
+    lastResult = result;
     spin = Math.floor(Math.random() * foodList.length);
     result = foodList[spin];
 
+    var lowerCaseResult = result.toLowerCase();
+    var lowerCaseLastResult = lastResult.toLowerCase();
+
     // If the result is the same as last time, keep spinning until it's different
-    if (lastResult == result) {
-        while (lastResult == result) {
-            result = foodList[spin];
-        }
+    while (lowerCaseLastResult === lowerCaseResult) {
+        lowerCaseResult = foodList[Math.floor(Math.random() * foodList.length)];
     }
-    return result.toLowerCase();
+
+    return lowerCaseResult;
 }
 
 // Build and apply the maps link
@@ -55,6 +58,7 @@ function animateSpinWheel() {
     var spinnerRevolutions = 0;
     var maxSpinnerRevolutions = 10;
 
+    // Interval loop
     var loop = setInterval(function () {
         spinnerRevolutions++;
         spin = Math.floor(Math.random() * foodList.length);

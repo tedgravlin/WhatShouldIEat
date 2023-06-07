@@ -125,7 +125,11 @@ input[type=button] {
 img.dieIcon {
     width: 50%;
     height: 100%;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
     object-fit: contain;
+    position: relative;
 }
 
 img.foodIcon {
@@ -164,6 +168,16 @@ img.foodIcon {
     }
 }
 
+@keyframes finishMoveUp {
+    0% {
+        top: 0px;
+        opacity: 100%;
+    }
+    100% {
+        top: -250px;
+        opacity: 0%;
+    }
+}
 
 @media (prefers-color-scheme: light) {
     body {

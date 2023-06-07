@@ -92,8 +92,12 @@ function spinEnd(spin) {
 }
 
 function resetWheel() {
-    // Delete icons
-    document.getElementById("foodIcon").remove();
+    // Move the current icon up
+    document.getElementById("foodIcon").style.animationName = "finishMoveUp";
+    // Wait for the animation to finish then delete icon
+    setTimeout(function () {
+        document.getElementById("foodIcon").remove();
+    }, 500);
     // Set the result text and make it hidden
     foodResultText.innerHTML = "Spin the wheel!";
     foodResultText.style.visibility = "hidden";

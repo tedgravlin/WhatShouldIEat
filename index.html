@@ -15,29 +15,35 @@
 </head>
 
 <body>
-    <div class="body">
-        <!-- Title-->
-        <div class="header">
-            <h1 class="title">What Should I Eat?</h1>
-        </div>
-        <!-- Food Icon -->
-        <div id="spinnerContainer" class="spinnerContainer">
-            <div class="spinnerBackground">
-                <div class="spinnerBorder">
-                    <div id="spinner" class="spinner">
-                        <img class="dieIcon" id="foodIcon" src="./assets/images/die.webp">
-                        <p id="foodResultText" class="foodResultText">Spin the wheel!</p>
-                    </div>
+    <!-- Title-->
+    <div class="header">
+        <h1 class="title">What Should I Eat?</h1>
+    </div>
+    <!-- Spinner -->
+    <div id="spinnerContainer" class="spinnerContainer">
+        <div class="spinnerBackground">
+            <div id="spinnerBorder" class="spinnerBorder">
+                <div id="spinner" class="spinner">
+                    <img class="dieIcon" id="foodIcon" src="./assets/images/die.webp">
+                    <p id="foodResultText" class="foodResultText">Spin the wheel!</p>
                 </div>
-                <input type="button" class="spin" id="spinButton" value="Spin" onclick="animateSpinWheel()">
+            </div>
+            <input type="button" class="spin" id="spinButton" value="Spin" onclick="animateSpinWheel()"><br>
+            <input type="button" class="options" id="optionsButton" value="Options" onclick="openOptions()">
+            <!-- Options Menu -->
+            <div id="optionsMenu" class="optionsMenu">
+                <h2 class="options"> Options </h2>
+                <input type="button" id="exitOptions" class="exitOptions" onclick="exitOptions()" value="Exit">
+                <div id="optionsFoodList" class="optionsFoodList">
+                </div>
             </div>
         </div>
-        <!-- Bottom Sheet -->
-        <div id="bottomSheet" class="bottomSheet" style="display: none;">
-            <a id="openMapsLink" href="null" target="_blank" rel="noopener noreferrer" disabled>
-                <input type="button" class="openMaps" id="openMapsButton" value="null" style="visibility: hidden;">
-            </a>
-        </div>
+    </div>
+    <!-- Bottom Sheet -->
+    <div id="bottomSheet" class="bottomSheet" style="display: none;">
+        <a id="openMapsLink" href="null" target="_blank" rel="noopener noreferrer" disabled>
+            <input type="button" class="openMaps" id="openMapsButton" value="null" style="visibility: hidden;">
+        </a>
     </div>
 
     <!-- Import JavaScipt -->

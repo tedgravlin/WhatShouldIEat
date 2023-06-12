@@ -168,11 +168,15 @@ function handleRemovalButton(item) {
         }
         // Set the value of the button to "Include"
         button.setAttribute("value", "Include");
+        // Change the color of the button to green
+        button.style.backgroundColor = "green";
     }
     // If the item isn't in the list, add it to the list
     else {
         foodList.push(item);
         // Set the value of the button to "Remove"
         button.setAttribute("value", "Remove");
+        // Change the color of the button to red
+        button.style.backgroundColor = "red";
     }
 }

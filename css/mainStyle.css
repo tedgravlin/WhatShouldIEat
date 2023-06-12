@@ -17,9 +17,10 @@ body {
     box-sizing: border-box;
 }
 
-div.body {
-    align-items: stretch;
-    overflow: hidden;
+div.main {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
 }
 
 /* Category: Text */
@@ -51,6 +52,7 @@ div.header {
     padding: 2em 0em 1em 0em;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
+    flex: 0 2 auto;
 }
 
 div.spinnerContainer {
@@ -60,6 +62,7 @@ div.spinnerContainer {
     margin: 2em auto 0em auto;
     padding: 0em 0em 0em 0em;
     border-radius: 16px;
+    flex: 1 1;
 }
 
 div.spinnerBackground {
@@ -75,6 +78,7 @@ div.spinnerBackground {
 div.bottomSheet {
     text-align: inherit;
     padding: 0em 0em 0em 0em;
+    margin-top: 2em;
     width: auto;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -83,6 +87,7 @@ div.bottomSheet {
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
     position: relative;
+    flex: 1 1 auto;
 }
 
 @keyframes slideUp {

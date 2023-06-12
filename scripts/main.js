@@ -47,7 +47,7 @@ function applyResults(result) {
     openMapsButton.style.visibility = "visible";
     // Make the bottom sheet come up
     bottomSheet.style.animationName = "slideUp";
-    bottomSheet.style.display = "inline";
+    bottomSheet.style.display = "block";
 }
 
 function animateSpinWheel() {

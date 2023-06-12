@@ -108,10 +108,8 @@ div.bottomSheet {
 }
 
 div.optionsMenu {
-    color: white;
     display: none;
     position: relative;
-    background-color: #222;
     padding: 0em 2em 0em 2em;
 }
 
@@ -244,6 +242,15 @@ img.foodIcon {
     div.spinnerBorder {
         border: 5px black solid;
     }
+    div.optionsMenu {
+        color: black;
+        background-color: #f5e8e8;
+    }
+    input[type=button] {
+        background-color: grey;
+        color: white;
+        font-weight: bold;
+    }
     input[type=button].spin {
         background-color: red;
         color: white;
@@ -277,6 +284,10 @@ img.foodIcon {
     }
     div.spinnerBorder {
         border: 5px black solid;
+    }
+    div.optionsMenu {
+        color: white;
+        background-color: #222;
     }
     input[type=button].spin {
         background-color: red;

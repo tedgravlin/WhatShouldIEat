@@ -128,8 +128,11 @@ function openOptions() {
     if (document.getElementById("optionsFoodList").childNodes.length <= 1) {
         // Add all of the food items
         for (var i = 0; i < foodList.length; i++) {
-            const foodLabel = document.createElement("p");
+            const foodDiv = document.createElement("div");
+            document.getElementById("optionsFoodList").appendChild(foodDiv);
+            const foodLabel = document.createElement("label");
             foodLabel.setAttribute("class", "optionsFoodLabel");
+            foodLabel.setAttribute("for", "removeButton");
             const removeButton = document.createElement("input");
             removeButton.setAttribute("type", "button");
             removeButton.setAttribute("value", "Remove");
@@ -140,9 +143,8 @@ function openOptions() {
             }, false);
             foodLabel.innerHTML = foodList[i];
             // Load in the food items
-            document.getElementById("optionsFoodList").appendChild(foodLabel);
-            document.getElementById("optionsFoodList").appendChild(removeButton);
-            document.getElementById("optionsFoodList").appendChild(document.createElement("br"));
+            foodDiv.appendChild(foodLabel);
+            foodDiv.appendChild(removeButton);
         }
     }
 }

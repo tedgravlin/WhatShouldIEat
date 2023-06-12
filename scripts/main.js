@@ -191,5 +191,12 @@ function handleRemovalButton(item) {
 }
 
 function share() {
-    navigator.share("Thanks for using What Should I Eat");
+    document.getElementById('shareButton').addEventListener("click", async () => {
+        try {
+          await navigator.share({
+            text: "Thank for using What Should I Eat!"
+          });
+        } catch (err) {
+        }
+    });
 }

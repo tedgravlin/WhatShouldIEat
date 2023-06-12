@@ -50,8 +50,6 @@ function animateSpinWheel() {
     var maxSpinnerRevolutions = 10;
     var result;
 
-    navigator.vibrate(200);
-
     // Reset the wheel
     resetWheel();
     // Disable the spin button
@@ -117,7 +115,7 @@ function resetWheel() {
     openMapsLink.setAttribute("disabled", true);
     // Make the bottom sheet slide down
     bottomSheet.style.animationName = "slideDown";
-    setTimeout(function() {
+    setTimeout(function () {
         bottomSheet.style.display = "none";
     }, 500);
 }
@@ -188,15 +186,4 @@ function handleRemovalButton(item) {
         // Change the color of the button to red
         button.style.backgroundColor = "red";
     }
-}
-
-function share() {
-    document.getElementById('shareButton').addEventListener("click", async () => {
-        try {
-          await navigator.share({
-            text: "Thank for using What Should I Eat!"
-          });
-        } catch (err) {
-        }
-    });
 }

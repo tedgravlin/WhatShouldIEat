@@ -48,7 +48,7 @@ p.foodResultText {
 
 /* Category: Div */
 div.header {
-    padding: 2em 0em 2em 0em;
+    padding: 2em 0em 1em 0em;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
 }
@@ -137,6 +137,13 @@ input[type=button] {
 input[type=button].removeButton {
     padding: 0.5em 1em 0.5em 1em;
     margin: 0.5em 0em 0.5em 0em;
+    border-radius: 32px;
+    border: 0px hidden;
+}
+
+input[type=button].openOptions {
+    padding: 0.5em 1em 0.5em 1em;
+    margin: 1em 0em 0em 0em;
     border-radius: 32px;
     border: 0px hidden;
 }

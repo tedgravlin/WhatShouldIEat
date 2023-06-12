@@ -21,6 +21,7 @@ div.main {
     display: flex;
     flex-flow: column;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* Category: Text */
@@ -111,6 +112,8 @@ div.optionsMenu {
     display: none;
     position: relative;
     padding: 0em 2em 0em 2em;
+    max-height: 50vh;
+    overflow: scroll;
 }
 
 div.optionsFoodList {

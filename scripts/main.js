@@ -7,26 +7,24 @@ const spinnerContainer = document.getElementById('spinnerContainer');
 const spinner = document.getElementById('spinner');
 const spinButton = document.getElementById('spinButton');
 const bottomSheet = document.getElementById('bottomSheet');
-var spin;
-var result;
 var lastResult;
-var finalSpin = 0;
 
 // Chooses a random cuisine from the list
-function chooseRandomFood() {
+function chooseRandomFood(result) {
+    var result;
+    var spin = Math.floor(Math.random() * foodList.length);
     lastResult = result;
-    spin = Math.floor(Math.random() * foodList.length);
     result = foodList[spin];
 
     // If lastResult isn't null and there's more than one item in foodList
     if ((lastResult != null) && (foodList.length > 1)) {
         // If the result is the same as last time, keep spinning until it's different
         while (lastResult.toLowerCase() === result.toLowerCase()) {
-            result = foodList[Math.floor(Math.random() * foodList.length)].toLowerCase();
+            result = foodList[Math.floor(Math.random() * foodList.length)];
         }
     }
 
-    return result.toLowerCase();
+    return result;
 }
 
 // Build and apply the maps link
@@ -58,24 +56,24 @@ function animateSpinWheel() {
     spinButton.setAttribute("disabled", true);
     var spinnerRevolutions = 0;
     var maxSpinnerRevolutions = 10;
+    var result;
 
     // Interval loop
     var loop = setInterval(function () {
         spinnerRevolutions++;
-        spin = Math.floor(Math.random() * foodList.length);
-        result = chooseRandomFood();
+        result = chooseRandomFood(result);
         foodIcon.style.display = "none";
         const icon = document.createElement("img");
         icon.className = "foodIcon";
-        icon.setAttribute("src", "./assets/images/" + result + ".webp");
+        icon.setAttribute("src", "./assets/images/" + result.toLowerCase() + ".webp");
         icon.id = "foodIcon";
 
         if (spinnerRevolutions == maxSpinnerRevolutions) {
-            finalSpin = spin;
+            finalResult = result;
             clearInterval(loop);
             icon.style.animationName = "moveHalfUp";
             spinner.appendChild(icon);
-            spinEnd(finalSpin);
+            spinEnd(finalResult);
         }
         else {
             spinner.appendChild(icon);
@@ -86,10 +84,9 @@ function animateSpinWheel() {
     }, 500)
 }
 
-function spinEnd(spin) {
+function spinEnd(finalResult) {
     setTimeout(function () {
-        result = foodList[spin];
-        applyResults(result);
+        applyResults(finalResult);
         // Enable the spin button
         spinButton.removeAttribute("disabled");
     }, 500)

@@ -20,17 +20,22 @@
         <div class="header">
             <h1 class="title">What Should I Eat?</h1>
         </div>
-        <!-- Spinner -->
-        <div id="spinnerContainer" class="spinnerContainer">
-            <div class="spinnerBackground">
+        <!-- Main Card Container -->
+        <div id="mainCardContainer" class="mainCardContainer">
+            <!-- Main Card -->
+            <div class="mainCard">
+                <!-- Spinner -->
                 <div id="spinnerBorder" class="spinnerBorder">
                     <div id="spinner" class="spinner">
                         <img class="dieIcon" id="foodIcon" src="./assets/images/die.webp">
                         <p id="foodResultText" class="foodResultText">Spin the wheel!</p>
                     </div>
                 </div>
-                <input type="button" class="spin" id="spinButton" value="Spin" onclick="animateSpinWheel()"><br>
-                <input type="button" class="openOptions" id="optionsButton" value="Options" onclick="openOptions()">
+                <!-- Spinner Buttons -->
+                <div id="spinnerButtons">
+                    <input type="button" class="spin" id="spinButton" value="Spin" onclick="animateSpinWheel()"><br>
+                    <input type="button" class="openOptions" id="optionsButton" value="Options" onclick="openOptions()">
+                </div>
                 <!-- Options Menu -->
                 <div id="optionsMenu" class="optionsMenu">
                     <h2 class="options"> Options </h2>
@@ -43,7 +48,7 @@
         <!-- Bottom Sheet -->
         <div id="bottomSheet" class="bottomSheet" style="display: none;">
             <a id="openMapsLink" href="null" target="_blank" rel="noopener noreferrer" disabled>
-                <input type="button" class="openMaps" id="openMapsButton" value="null" style="visibility: hidden;"><br>
+                <input type="button" class="openMaps" id="openMapsButton" value="null"><br>
             </a>
         </div>
     </div>

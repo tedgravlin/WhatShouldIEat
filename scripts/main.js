@@ -3,17 +3,15 @@ const foodResultText = document.getElementById('foodResultText');
 const openMapsButton = document.getElementById('openMapsButton');
 const openMapsLink = document.getElementById('openMapsLink');
 const foodIcon = document.getElementById('foodIcon');
-const spinnerContainer = document.getElementById('spinnerContainer');
 const spinner = document.getElementById('spinner');
 const spinButton = document.getElementById('spinButton');
 const bottomSheet = document.getElementById('bottomSheet');
-var lastResult;
 
-// Chooses a random cuisine from the list
-function chooseRandomFood(result) {
+// Chooses a random cuisine from the list and returns it
+function chooseRandomFood(currentResult) {
     var result;
     var spin = Math.floor(Math.random() * foodList.length);
-    lastResult = result;
+    var lastResult = currentResult;
     result = foodList[spin];
 
     // If lastResult isn't null and there's more than one item in foodList
@@ -27,7 +25,7 @@ function chooseRandomFood(result) {
     return result;
 }
 
-// Build and apply the maps link
+// Applies results of the spin to the page
 function applyResults(result) {
     // Set the result text and make it visible
     foodResultText.innerHTML = result;
@@ -40,34 +38,36 @@ function applyResults(result) {
     openMapsLink.removeAttribute("disabled");
     // Pass text to open maps button
     openMapsButton.setAttribute('value', "Show " + result + " places near me");
-    // Make the open maps link visible
-    openMapsLink.style.display = "inline";
-    // Make the open maps button visible
-    openMapsButton.style.visibility = "visible";
     // Make the bottom sheet come up
     bottomSheet.style.animationName = "slideUp";
     bottomSheet.style.display = "block";
 }
 
+// The spinner
 function animateSpinWheel() {
-    // Reset the wheel
-    resetWheel();
-    // Disable the spin button
-    spinButton.setAttribute("disabled", true);
     var spinnerRevolutions = 0;
     var maxSpinnerRevolutions = 10;
     var result;
 
-    // Interval loop
+    // Reset the wheel
+    resetWheel();
+    // Disable the spin button
+    spinButton.setAttribute("disabled", true);
+
+    // Loop every 0.5 seconds
     var loop = setInterval(function () {
+        // Increment counter
         spinnerRevolutions++;
+        // Get result
         result = chooseRandomFood(result);
+        // Spin icons
         foodIcon.style.display = "none";
         const icon = document.createElement("img");
         icon.className = "foodIcon";
         icon.setAttribute("src", "./assets/images/" + result.toLowerCase() + ".webp");
         icon.id = "foodIcon";
 
+        // If the max number of revolutions is reached, then stop and apply results
         if (spinnerRevolutions == maxSpinnerRevolutions) {
             finalResult = result;
             clearInterval(loop);
@@ -84,6 +84,7 @@ function animateSpinWheel() {
     }, 500)
 }
 
+// The final spin
 function spinEnd(finalResult) {
     setTimeout(function () {
         applyResults(finalResult);
@@ -93,6 +94,7 @@ function spinEnd(finalResult) {
 
 }
 
+// Resets the wheel
 function resetWheel() {
     // Move the current icon up
     document.getElementById("foodIcon").style.animationName = "finishMoveUp";
@@ -106,18 +108,19 @@ function resetWheel() {
     foodResultText.style.display = "none";
     // Disable the maps link
     openMapsLink.setAttribute("disabled", true);
-    // Make the open maps button hidden
-    openMapsButton.style.visibility = "hidden";
     // Make the bottom sheet slide down
     bottomSheet.style.animationName = "slideDown";
+    setTimeout(function() {
+        bottomSheet.style.display = "none";
+    }, 500);
 }
 
+// Opens the option menu
 function openOptions() {
     // Hide the spinner
     document.getElementById("spinnerBorder").style.display = "none";
     // Hide the buttons
-    document.getElementById("spinButton").style.display = "none";
-    document.getElementById("optionsButton").style.display = "none";
+    document.getElementById("spinnerButtons").style.display = "none";
     // Unhide the options menu
     document.getElementById("optionsMenu").style.display = "block";
 
@@ -144,17 +147,19 @@ function openOptions() {
     }
 }
 
+// Closes the options menu
 function exitOptions() {
     // Unhide the spinner
     document.getElementById("spinnerBorder").style.display = "block";
     // Unide the buttons
-    document.getElementById("spinButton").style.display = "inline";
-    document.getElementById("optionsButton").style.display = "inline";
+    document.getElementById("spinnerButtons").style.display = "inline";
     // Hide the options menu
     document.getElementById("optionsMenu").style.display = "none";
 }
 
+// Handles removal of items from the list
 function handleRemovalButton(item) {
+    const button = document.getElementById(item);
     // If the item is in the list, then remove it
     if (foodList.includes(item)) {
         const index = foodList.indexOf(item);
@@ -162,12 +167,12 @@ function handleRemovalButton(item) {
             foodList.splice(index, 1);
         }
         // Set the value of the button to "Include"
-        document.getElementById(item).setAttribute("value", "Include");
+        button.setAttribute("value", "Include");
     }
     // If the item isn't in the list, add it to the list
     else {
         foodList.push(item);
         // Set the value of the button to "Remove"
-        document.getElementById(item).setAttribute("value", "Remove");
+        button.setAttribute("value", "Remove");
     }
 }

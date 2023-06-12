@@ -21,7 +21,6 @@ div.main {
     display: flex;
     flex-flow: column;
     height: 100vh;
-    overflow: hidden;
 }
 
 /* Category: Text */
@@ -63,7 +62,7 @@ div.header {
     flex: 0 2 auto;
 }
 
-div.spinnerContainer {
+div.mainCardContainer {
     text-align: inherit;
     height: min-content;
     width: 90vw;
@@ -73,7 +72,7 @@ div.spinnerContainer {
     flex: 1 1;
 }
 
-div.spinnerBackground {
+div.mainCard {
     text-align: inherit;
     height: min-content;
     width: 90vw;
@@ -236,7 +235,7 @@ img.foodIcon {
     div.bottomSheet {
         background-color: #f5e8e8;
     }
-    div.spinnerBackground {
+    div.mainCard {
         background-color: #f5e8e8;
     }
     div.spinner {
@@ -279,7 +278,7 @@ img.foodIcon {
     div.bottomSheet {
         background-color: #222;
     }
-    div.spinnerBackground {
+    div.mainCard {
         background-color: #222;
     }
     div.spinner {

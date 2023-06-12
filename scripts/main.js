@@ -33,7 +33,8 @@ function chooseRandomFood() {
 function applyResults(result) {
     // Set the result text and make it visible
     foodResultText.innerHTML = result;
-    foodResultText.style.visibility = "visible";
+    foodResultText.style.display = "block";
+    foodResultText.style.animationName = "bounceIn";
     // Build maps link
     mapsLink = ("https://www.google.com/maps/search/" + result + "+food+near+me/");
     // Pass maps link to maps button and enable link
@@ -98,13 +99,14 @@ function spinEnd(spin) {
 function resetWheel() {
     // Move the current icon up
     document.getElementById("foodIcon").style.animationName = "finishMoveUp";
+    document.getElementById("foodResultText").style.animationName = "out";
     // Wait for the animation to finish then delete icon
     setTimeout(function () {
         document.getElementById("foodIcon").remove();
     }, 500);
     // Set the result text and make it hidden
     foodResultText.innerHTML = "Spin the wheel!";
-    foodResultText.style.visibility = "hidden";
+    foodResultText.style.display = "none";
     // Disable the maps link
     openMapsLink.setAttribute("disabled", true);
     // Make the open maps button hidden

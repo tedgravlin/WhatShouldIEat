@@ -37,7 +37,7 @@ h2.options {
 }
 
 p.foodResultText {
-    visibility: hidden;
+    display: none;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -45,6 +45,13 @@ p.foodResultText {
     margin-left: auto;
     margin-right: auto;
     padding-top: 1em;
+    animation: 0.5s linear ease-in-out forwards;
+}
+
+@keyframes bounceIn {
+    0% { scale: 0%;}
+    50% { scale: 125%;}
+    100% { scale: 100%;}
 }
 
 /* Category: Div */

@@ -50,6 +50,8 @@ function animateSpinWheel() {
     var maxSpinnerRevolutions = 10;
     var result;
 
+    navigator.vibrate(200);
+
     // Reset the wheel
     resetWheel();
     // Disable the spin button
@@ -186,4 +188,8 @@ function handleRemovalButton(item) {
         // Change the color of the button to red
         button.style.backgroundColor = "red";
     }
+}
+
+function share() {
+    navigator.share("Thanks for using What Should I Eat");
 }

@@ -44,6 +44,7 @@ a.optionsLink {
     display: block;
     margin-top: 1em;
     cursor: pointer;
+    text-decoration: none;
 }
 
 p.foodResultText {
@@ -285,7 +286,7 @@ img.foodIcon {
         font-weight: bold;
     }
     input[type=button].spin {
-        background-color: red;
+        background-color: #EB0000;
         color: white;
         font-weight: bold;
     }
@@ -304,7 +305,7 @@ img.foodIcon {
         color: red;
     }
     a.optionsLink, a:visited.optionsLink {
-        color: white;
+        color: gainsboro;
     }
     div.header {
         background-color: #222;
@@ -326,7 +327,7 @@ img.foodIcon {
         background-color: #222;
     }
     input[type=button].spin {
-        background-color: red;
+        background-color: #EB0000;
         color: white;
         font-weight: bold;
     }

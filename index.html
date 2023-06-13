@@ -62,6 +62,12 @@
     </div>
 
     <!-- Import JavaScipt -->
-    <script type="text/javascript" src="./scripts/main.js"></script>
+    <script type="text/javascript" src="./scripts/main.js" defer></script>
+    <!-- PWA Stuff -->
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+          navigator.serviceWorker.register('sw.js')
+        }
+      </script>
 </body>
 </html>

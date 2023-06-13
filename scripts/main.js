@@ -85,6 +85,8 @@ function animateSpinWheel() {
             finalResult = result;
             clearInterval(loop);
             icon.style.animationName = "moveHalfUp";
+            // Add alt text to foodIcon
+            icon.setAttribute("alt", result);
             spinner.appendChild(icon);
             spinEnd(finalResult);
         }

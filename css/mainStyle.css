@@ -40,6 +40,12 @@ label.optionsFoodLabel {
     display: block;
 }
 
+a.optionsLink {
+    display: block;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
 p.foodResultText {
     display: none;
     font-weight: bold;
@@ -82,7 +88,7 @@ div.mainCard {
     width: 90vw;
     min-height: 323px;
     margin: 0em auto 0em auto;
-    padding: 2em 0em 2em 0em;
+    padding: 2em 0em 1em 0em;
     border-radius: 16px;
 }
 
@@ -250,6 +256,9 @@ img.foodIcon {
     body {
         background-color: #FFFFFF;
     }
+    a.optionsLink, a:visited.optionsLink {
+        color: black
+    }
     div.header {
         background-color: #f5e8e8;
     }
@@ -292,6 +301,9 @@ img.foodIcon {
     }
     h1.title {
         color: red;
+    }
+    a.optionsLink, a:visited.optionsLink {
+        color: white;
     }
     div.header {
         background-color: #222;

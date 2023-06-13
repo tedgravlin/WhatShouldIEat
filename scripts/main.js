@@ -6,7 +6,7 @@ const foodIcon = document.getElementById('foodIcon');
 const spinner = document.getElementById('spinner');
 const spinButton = document.getElementById('spinButton');
 const bottomSheet = document.getElementById('bottomSheet');
-const optionsButton = document.getElementById('optionsButton');
+const optionsLink = document.getElementById('optionsLink');
 
 // Chooses a random cuisine from the list and returns it
 function chooseRandomFood(currentResult) {
@@ -56,7 +56,7 @@ function animateSpinWheel() {
     // Disable the spin button
     spinButton.setAttribute("disabled", true);
     // Disable the options button
-    optionsButton.setAttribute("disabled", true);
+    optionsLink.style.pointerEvents = "none";
 
     var animationSpeed = 0.5;
     // Loop every 0.5 seconds
@@ -106,7 +106,7 @@ function spinEnd(finalResult) {
         // Enable the spin button
         spinButton.removeAttribute("disabled");
         // Enable the options button
-        optionsButton.removeAttribute("disabled");
+        optionsLink.style.pointerEvents = "all";
     }, 500)
 
 }

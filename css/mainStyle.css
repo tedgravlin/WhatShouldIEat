@@ -132,11 +132,15 @@ div.spinner {
     border-radius: 11px;
     background-color: white;
     overflow: hidden;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     box-shadow:  inset 0px -190px 26px -190px rgba(92,92,92,1),  inset 0px 190px 26px -190px rgba(92,92,92,1);
 }
 
 div.spinnerBorder {
     border-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     width: min-content;
     margin-left: auto;
     margin-right: auto;
@@ -148,6 +152,18 @@ input[type=button] {
     margin: 2em 0em 0em 0em;
     border-radius: 32px;
     border: 0px hidden;
+}
+
+input[type=button].spin {
+    width: 31vh;
+    padding: 1em 2em 1em 2em;
+    margin: 0;
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom: 5px black solid;
+    border-left: 5px black solid;
+    border-right: 5px black solid;
 }
 
 input[type=button].removeButton {

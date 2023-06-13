@@ -49,6 +49,7 @@ function animateSpinWheel() {
     var spinnerRevolutions = 0;
     var maxSpinnerRevolutions = 10;
     var result;
+    
 
     // Reset the wheel
     resetWheel();
@@ -57,10 +58,18 @@ function animateSpinWheel() {
     // Disable the options button
     optionsButton.setAttribute("disabled", true);
 
+    var animationSpeed = 0.5;
     // Loop every 0.5 seconds
     var loop = setInterval(function () {
         // Increment counter
         spinnerRevolutions++;
+        // Increase animation speed
+        if (spinnerRevolutions <= (maxSpinnerRevolutions / 2) && animationSpeed > 0.3 && spinnerRevolutions > 1) {
+            animationSpeed -= 0.1;
+        }
+        else if (spinnerRevolutions <= maxSpinnerRevolutions && animationSpeed < 0.5 && spinnerRevolutions > 1) {
+            animationSpeed += 0.1;
+       }
         // Get result
         result = chooseRandomFood(result);
         // Spin icons
@@ -69,6 +78,7 @@ function animateSpinWheel() {
         icon.className = "foodIcon";
         icon.setAttribute("src", "./assets/images/" + result.toLowerCase() + ".webp");
         icon.id = "foodIcon";
+        icon.style.animationDuration = animationSpeed + "s";
 
         // If the max number of revolutions is reached, then stop and apply results
         if (spinnerRevolutions == maxSpinnerRevolutions) {
